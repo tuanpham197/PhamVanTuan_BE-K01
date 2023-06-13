@@ -1,13 +1,15 @@
-FROM golang:1.14
+FROM golang:1.19
 
 ENV GO111MODULE=on
 
 WORKDIR /app
 
 RUN mkdir /var/log/entry/
+RUN go mod init newfeed_app
 RUN go mod download
 COPY ../../ .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build cmd/newsfeed_svc/main.go
+# RUN go build cmd/newsfeed_svc/main.go
 
-CMD ["/app/main -config config/files/test.yml"]
+# CMD ["/app/main -config config/files/test.yml"]
+CMD ["go run main.go"]

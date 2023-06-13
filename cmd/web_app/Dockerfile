@@ -1,13 +1,14 @@
-FROM golang:1.14
+FROM golang:1.19
 
 ENV GO111MODULE=on
 
 WORKDIR /app
 
 RUN mkdir /var/log/entry/
+RUN go mod init web_app
 RUN go mod download
 COPY ../../ .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build cmd/web_app/main.go
+# RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build cmd/web_app/main.go
 
-CMD ["/app/main -config config/files/test.yml"]
+# CMD ["/app/main -config config/files/test.yml"]

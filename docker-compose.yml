@@ -1,7 +1,9 @@
 version: '3'
 services:
   web:
-    build: ./build/web/
+    build: 
+      context: ./cmd/web_app
+      dockerfile: Dockerfile
     image: websvc
     ports:
       - 8080
@@ -14,7 +16,9 @@ services:
     hostname: web
 
   aap:
-    build: ./build/aap/
+    build: 
+      context: ./cmd/authen_and_post_svc
+      dockerfile: Dockerfile
     image: aapsvc
     depends_on:
       - mysql
@@ -23,7 +27,9 @@ services:
       - intranet
     hostname: aap
   newsfeed:
-    build: ./build/newsfeed/
+    build: 
+      context: ./cmd/newsfeed_svc
+      dockerfile: Dockerfile
     image: newsfeedsvc
     depends_on:
       - mysql
@@ -32,7 +38,8 @@ services:
       - intranet
     hostname: newsfeed
   mysql:
-    image: mysql:5.5
+    platform: linux/x86_64
+    image: mysql:8.0
     volumes:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
       - ./data/mysql:/var/lib/mysql
