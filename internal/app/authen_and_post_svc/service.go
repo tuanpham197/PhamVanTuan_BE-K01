@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/EngineerProOrg/BE-K01/configs"
-	"github.com/EngineerProOrg/BE-K01/pkg/types/proto/pb/authen_and_post"
 	"github.com/go-redis/redis/v8"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/configs"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/types/proto/pb/authen_and_post"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

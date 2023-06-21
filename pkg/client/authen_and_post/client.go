@@ -4,7 +4,7 @@ import (
 	"context"
 	"math/rand"
 
-	"github.com/EngineerProOrg/BE-K01/pkg/types/proto/pb/authen_and_post"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/types/proto/pb/authen_and_post"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )

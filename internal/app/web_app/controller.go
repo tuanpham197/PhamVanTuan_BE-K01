@@ -3,9 +3,9 @@ package web_app
 import (
 	"fmt"
 
-	"github.com/EngineerProOrg/BE-K01/internal/app/web_app/service"
-	v1 "github.com/EngineerProOrg/BE-K01/internal/app/web_app/v1"
 	"github.com/gin-gonic/gin"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/web_app/service"
+	v1 "github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/web_app/v1"
 )
 
 type WebController struct {

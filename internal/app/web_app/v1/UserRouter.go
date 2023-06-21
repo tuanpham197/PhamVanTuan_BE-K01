@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/EngineerProOrg/BE-K01/internal/app/web_app/service"
 	"github.com/gin-gonic/gin"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/web_app/service"
 )
 
 func AddUserRouter(r *gin.RouterGroup, svc *service.WebService) {

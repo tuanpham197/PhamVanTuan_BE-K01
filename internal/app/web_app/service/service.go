@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/EngineerProOrg/BE-K01/configs"
-	"github.com/EngineerProOrg/BE-K01/internal/pkg/types"
-	authen_and_post2 "github.com/EngineerProOrg/BE-K01/pkg/client/authen_and_post"
-	newsfeed2 "github.com/EngineerProOrg/BE-K01/pkg/client/newsfeed"
-	"github.com/EngineerProOrg/BE-K01/pkg/types/proto/pb/authen_and_post"
-	"github.com/EngineerProOrg/BE-K01/pkg/types/proto/pb/newsfeed"
 	"github.com/gin-gonic/gin"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/configs"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/pkg/types"
+	authen_and_post2 "github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/client/authen_and_post"
+	newsfeed2 "github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/client/newsfeed"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/types/proto/pb/authen_and_post"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/types/proto/pb/newsfeed"
 )
 
 type WebService struct {

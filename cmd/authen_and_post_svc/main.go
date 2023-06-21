@@ -6,9 +6,9 @@ import (
 	"log"
 	"net"
 
-	"github.com/EngineerProOrg/BE-K01/configs"
-	"github.com/EngineerProOrg/BE-K01/internal/app/authen_and_post_svc"
-	"github.com/EngineerProOrg/BE-K01/pkg/types/proto/pb/authen_and_post"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/configs"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/authen_and_post_svc"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/types/proto/pb/authen_and_post"
 	"google.golang.org/grpc"
 )
 

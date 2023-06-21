@@ -6,9 +6,9 @@ import (
 	"log"
 	"net"
 
-	"github.com/EngineerProOrg/BE-K01/configs"
-	"github.com/EngineerProOrg/BE-K01/internal/app/newsfeed_svc"
-	"github.com/EngineerProOrg/BE-K01/pkg/types/proto/pb/newsfeed"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/configs"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/newsfeed_svc"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/pkg/types/proto/pb/newsfeed"
 	"google.golang.org/grpc"
 )
 

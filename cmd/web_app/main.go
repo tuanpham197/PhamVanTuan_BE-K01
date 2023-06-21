@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/EngineerProOrg/BE-K01/configs"
-	"github.com/EngineerProOrg/BE-K01/internal/app/web_app"
-	"github.com/EngineerProOrg/BE-K01/internal/app/web_app/service"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/configs"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/web_app"
+	"github.com/tuanpham197/PhamVanTuan_BE-K01/internal/app/web_app/service"
 )
 
 var (
