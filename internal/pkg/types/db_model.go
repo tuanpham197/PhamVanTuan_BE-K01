@@ -23,6 +23,15 @@ func (User) TableName() string {
 	return "user"
 }
 
+type UserFollow struct {
+	UserId   int64 `gorm:"primaryKey" column:"user_id"`
+	FriendId int64 `gorm:"primaryKey" column:"friend_id"`
+}
+
+func (UserFollow) TableName() string {
+	return "following"
+}
+
 type Post struct {
 	gorm.Model
 	ContentText      string     `gorm:"size:500"`
@@ -33,7 +42,7 @@ type Post struct {
 }
 
 func (Post) TableName() string {
-	return "post"
+	return "posts"
 }
 
 type Comment struct {
@@ -48,6 +57,7 @@ func (Comment) TableName() string {
 }
 
 type Like struct {
+	Id        uint      `gorm:"primaryKey"`
 	UserID    uint      `gorm:"primaryKey"`
 	PostID    uint      `gorm:"primaryKey"`
 	CreatedAt time.Time `gorm:"not null"`

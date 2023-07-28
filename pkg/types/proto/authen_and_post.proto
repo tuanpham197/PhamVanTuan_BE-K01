@@ -8,12 +8,26 @@ service AuthenticateAndPost {
   rpc EditUser(UserDetailInfo) returns (UserResult) {}
   rpc GetUserFollower(UserInfo) returns (UserFollower) {}
   rpc GetPostDetail(GetPostRequest) returns (Post) {}
-  //TODO: create more api
+  rpc UnFollowUser(UserFollowRequest) returns (BoolResp) {}
+  rpc FollowUser(UserFollowRequest) returns (BoolResp) {}
+  rpc CreatePost(PostRequest) returns (Post) {}
+  rpc GetPostFriend(UserInfo) returns (PostFriend) {}
+  rpc DeletePost(GetPostRequest) returns (TextResponse) {}
+  rpc UpdatePost(Post) returns (Post) {}
+  rpc CommentPost(CommentPostRequest) returns (BoolResp) {}
+  rpc LikePost(LikePostRequest) returns (BoolResp) {}
 }
+
 message UserInfo {
   int64 user_id = 1;
   string user_name = 2;
   string user_password = 3;
+}
+
+message CommentPostRequest {
+  int64 post_id = 1;
+  string content = 2;
+  int64 user_id = 3;
 }
 
 message UserDetailInfo {
@@ -23,6 +37,12 @@ message UserDetailInfo {
   string last_name = 4;
   int64 dob = 5;
   string email = 6;
+  string birth_day = 7;
+  string password = 8;
+}
+
+message TextResponse {
+  string message = 1;
 }
 
 enum UserStatus{
@@ -43,11 +63,44 @@ message GetPostRequest {
   int64 post_id = 1;
 }
 
+message UserFollowRequest {
+  int64 user_id = 1;
+  int64 friend_id = 2;
+}
+
 message Post {
   int64 post_id = 1;
   int64 user_id = 2;
   string content_text = 3;
   string content_image_path = 4;
   bool visible = 5;
-  int64 created_at = 6;
+  string created_at = 6;
 }
+
+message PostRequest {
+  int64 user_id = 1;
+  string content_text = 2;
+  string content_image_path = 3;
+  bool visible = 4;
+  string created_at = 5;
+}
+
+message PostFriend {
+  repeated Post posts = 1;
+}
+
+message LikePostRequest {
+  enum LikePostStatus {
+    DISLIKE = 0;
+    LIKE = 1;
+  }
+
+  int64 post_id = 1;
+  int64 user_id = 2;
+  LikePostStatus status = 3;
+}
+
+message BoolResp {
+  bool result = 1;
+}
+

@@ -33,6 +33,38 @@ func (a *randomClient) GetPostDetail(ctx context.Context, in *authen_and_post.Ge
 	return a.clients[rand.Intn(len(a.clients))].GetPostDetail(ctx, in, opts...)
 }
 
+func (a *randomClient) UnFollowUser(ctx context.Context, in *authen_and_post.UserFollowRequest, opts ...grpc.CallOption) (*authen_and_post.BoolResp, error) {
+	return a.clients[rand.Intn(len(a.clients))].UnFollowUser(ctx, in, opts...)
+}
+
+func (a *randomClient) FollowUser(ctx context.Context, in *authen_and_post.UserFollowRequest, opts ...grpc.CallOption) (*authen_and_post.BoolResp, error) {
+	return a.clients[rand.Intn(len(a.clients))].FollowUser(ctx, in, opts...)
+}
+
+func (a *randomClient) CreatePost(ctx context.Context, post *authen_and_post.PostRequest, opts ...grpc.CallOption) (*authen_and_post.Post, error) {
+	return a.clients[rand.Intn(len(a.clients))].CreatePost(ctx, post, opts...)
+}
+
+func (a *randomClient) DeletePost(ctx context.Context, postRequest *authen_and_post.GetPostRequest, opts ...grpc.CallOption) (*authen_and_post.TextResponse, error) {
+	return a.clients[rand.Intn(len(a.clients))].DeletePost(ctx, postRequest, opts...)
+}
+
+func (a *randomClient) GetPostFriend(ctx context.Context, userInfo *authen_and_post.UserInfo, opts ...grpc.CallOption) (*authen_and_post.PostFriend, error) {
+	return a.clients[rand.Intn(len(a.clients))].GetPostFriend(ctx, userInfo, opts...)
+}
+
+func (a *randomClient) UpdatePost(ctx context.Context, post *authen_and_post.Post, opts ...grpc.CallOption) (*authen_and_post.Post, error) {
+	return a.clients[rand.Intn(len(a.clients))].UpdatePost(ctx, post, opts...)
+}
+
+func (a *randomClient) CommentPost(ctx context.Context, commentPostRequest *authen_and_post.CommentPostRequest, opts ...grpc.CallOption) (*authen_and_post.BoolResp, error) {
+	return a.clients[rand.Intn(len(a.clients))].CommentPost(ctx, commentPostRequest, opts...)
+}
+
+func (a *randomClient) LikePost(ctx context.Context, likePostRequest *authen_and_post.LikePostRequest, opts ...grpc.CallOption) (*authen_and_post.BoolResp, error) {
+	return a.clients[rand.Intn(len(a.clients))].LikePost(ctx, likePostRequest, opts...)
+}
+
 func NewClient(hosts []string) (authen_and_post.AuthenticateAndPostClient, error) {
 	var opts = []grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())}
 	clients := make([]authen_and_post.AuthenticateAndPostClient, 0, len(hosts))
